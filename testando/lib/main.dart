@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:testando/app/listawidget.dart';
 
 void main() {
   runApp(Rodrigo());
@@ -22,6 +21,7 @@ class Saymon extends StatefulWidget {
 class SaymonPage extends State<Saymon> {
   Widget item = Container();
   var itens = <Widget>[];
+  
 
   void add() {
     setState(() {
@@ -95,7 +95,7 @@ class SaymonPage extends State<Saymon> {
                         )),
                     IconButton(
                         onPressed: () {
-                          
+                          print(itens);
                           descontando();
                         },
                         icon: Icon(
