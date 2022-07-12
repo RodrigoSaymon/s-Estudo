@@ -1,4 +1,8 @@
 void main() {
+  var dart = "Dart";
+  var Flutter = "Flutter";
+  print('Developer' + dart + Flutter);
+
   String? nome;
   String sobreNome = ' Saymon';
   List nomes = [
@@ -17,7 +21,7 @@ void main() {
   // numeros[0] = 'Rodrigo';
 
   nome = 'Rodrigo';
-  var  nomeMap = nomes.asMap();
+  var nomeMap = nomes.asMap();
   print(nomeMap.keys);
   print(nomeMap.values);
   // for (var item in nomeMap){}
