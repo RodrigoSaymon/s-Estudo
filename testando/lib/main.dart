@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,7 +24,6 @@ class Saymon extends StatefulWidget {
 class SaymonPage extends State<Saymon> {
   Widget item = Container();
   var itens = <Widget>[];
-
   void add() {
     setState(() {
       itens.add(item);
@@ -53,51 +52,45 @@ class SaymonPage extends State<Saymon> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Novo App'),
-        actions: [
-          IconButton(
-            onPressed: () {
-              add();
-            },
-            icon: Icon(Icons.add),
-          ),
-          IconButton(
-            onPressed: () {
-              remover();
-            },
-            icon: Icon(Icons.remove),
-          ),
-          SizedBox(width: 10),
-        ],
-      ),
-      body: ListView.builder(
+        appBar: AppBar(
+          title: Text('Meu outro App'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  add();
+                },
+                icon: Icon(Icons.add)),
+            IconButton(
+                onPressed: () {
+                  remover();
+                },
+                icon: Icon(Icons.remove)),
+          ],
+        ),
+        body: ListView.builder(
           itemCount: itens.length,
           itemBuilder: ((context, index) => Container(
                 child: ListTile(
                     leading: CircleAvatar(
                       child: Text('$index'),
                     ),
-                    title: Text('Despesa $contar'),
-                    subtitle: Text('Previsto: ${100 * index}'),
+                    title: Text('$contar'),
+                    subtitle: Text('previsto: ${100 * index}'),
                     trailing: Container(
                       width: 100,
                       child: Row(
                         children: [
                           IconButton(
-                              onPressed: () {
-                                contando();
-                              },
-                              icon: Icon(Icons.edit)),
-                              IconButton(
-                              onPressed: () {
-                                descontando();
-                              },
-                              icon: Icon(Icons.delete)),
-                        ],
+                            onPressed: () {
+                              contando();
+                            },
+                            icon: Icon(Icons.edit),
+                          ),
+                          IconButton(onPressed: (){descontando();}, icon: Icon(Icons.delete),
+                      )],
                       ),
                     )),
-              ))),
-    );
+              )),
+        ));
   }
 }
